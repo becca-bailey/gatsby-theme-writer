@@ -12042,6 +12042,11 @@ typeface-petit-formal-script@^0.0.72:
   resolved "https://registry.yarnpkg.com/typeface-petit-formal-script/-/typeface-petit-formal-script-0.0.72.tgz#aa9361a5a919ca8403dca24dc115770b17ed0fd3"
   integrity sha512-1gxpzetKTvVZvbvpYMPpd110VHi3gbwVvTBa+YydyFnv4iVgSBGwvYrnz6QlNQ/u08+N32CFvaSAVFjtb6CLlw==
 
+typeface-rubik@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-rubik/-/typeface-rubik-0.0.72.tgz#85d028dc66e8388a941f8c7ce194fad963d1824e"
+  integrity sha512-dRJrtCEHfY3e39zq/U4JpFPVVbEogpDKCGnS70sXur253gnrwunjai26KCZbwdF3NEdMAYMTBu4CIn3hJp4xSA==
+
 ua-parser-js@^0.7.18:
   version "0.7.20"
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.20.tgz#7527178b82f6a62a0f243d1f94fd30e3e3c21098"

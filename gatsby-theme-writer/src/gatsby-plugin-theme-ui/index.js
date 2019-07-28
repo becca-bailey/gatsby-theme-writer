@@ -7,11 +7,12 @@ export default {
   colors: {
     text: "#232129",
     background: "#fff",
-    primary: "#639",
+    primary: "#4d13d1",
+    light: "#eeeeee",
   },
   fonts: {
     body: "Lora, serif",
-    heading: "sans-serif",
+    heading: "Rubik, sans-serif",
     title: "Petit Formal Script, sans-serif",
     default:
       '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
