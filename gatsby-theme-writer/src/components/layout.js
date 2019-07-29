@@ -10,6 +10,7 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          siteUrl
         }
       }
     }
@@ -25,7 +26,9 @@ const Layout = ({ children }) => {
         `}
       />
       <Header>
-        <SiteTitle>{data.site.siteMetadata.title}</SiteTitle>
+        <SiteTitle baseUrl={data.site.siteMetadata.siteUrl}>
+          {data.site.siteMetadata.title}
+        </SiteTitle>
       </Header>
       <Main>
         <Container>{children}</Container>

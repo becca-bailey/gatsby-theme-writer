@@ -15,7 +15,7 @@ class BlogPostTemplate extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <h1>{post.frontmatter.title}</h1>
         <PostMetadata
-          formattedDagte={post.frontmatter.date}
+          formattedDate={post.frontmatter.date}
           timeToRead={post.timeToRead}
         />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -64,7 +64,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        description
       }
     }
   }

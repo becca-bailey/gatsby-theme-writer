@@ -15,6 +15,7 @@ const FeaturedPosts = ({ posts }) => {
       <Grid columns={posts.length}>
         {posts.map(post => (
           <FeaturedPost
+            key={post.id}
             title={post.frontmatter.title}
             formattedDate={post.frontmatter.date}
             descriptionHTML={post.excerpt}
@@ -22,6 +23,7 @@ const FeaturedPosts = ({ posts }) => {
               post.frontmatter.featuredImage.childImageSharp.fluid
             }
             timeToRead={post.timeToRead}
+            slug={post.fields.slug}
           />
         ))}
       </Grid>

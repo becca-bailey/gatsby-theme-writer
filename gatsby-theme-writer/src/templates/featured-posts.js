@@ -15,6 +15,9 @@ const featuredPostsQuery = graphql`
       limit: 2
     ) {
       nodes {
+        fields {
+          slug
+        }
         frontmatter {
           title
           date(formatString: "MMMM D, YYYY")

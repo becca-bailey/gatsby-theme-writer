@@ -6,10 +6,10 @@
 
 module.exports = {
   siteMetadata: {
-    title: `Becca Bailey`,
+    title: `Gatsby Theme Writer`,
     author: `Becca Bailey`,
     description: `Becca likes to build things`,
-    siteUrl: `http://becca.is`,
+    siteUrl: `/`,
     social: {
       twitter: `beccaliz`,
     },
