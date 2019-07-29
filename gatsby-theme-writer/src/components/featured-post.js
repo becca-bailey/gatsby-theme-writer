@@ -1,6 +1,5 @@
 import { Link } from "gatsby"
 import Image from "gatsby-image"
-import React from "react"
 import { Styled } from "theme-ui"
 import PostMetadata from "./post-metadata"
 /** @jsx jsx */
@@ -16,7 +15,9 @@ const FeaturedPost = ({
 }) => {
   return (
     <article>
-      <Image fluid={fluidImageData} />
+      <Link to={slug}>
+        <Image sx={{ maxHeight: 250 }} fluid={fluidImageData} />
+      </Link>
       <Styled.h2 sx={{ marginBottom: 0 }}>{title}</Styled.h2>
       <PostMetadata timeToRead={timeToRead} formattedDate={formattedDate} />
       <p>

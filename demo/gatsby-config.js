@@ -5,5 +5,14 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: `Becca Bailey`,
+    author: `Becca Bailey`,
+    description: `Becca likes to build things`,
+    siteUrl: `http://becca.is`,
+    social: {
+      twitter: `beccaliz`,
+    },
+  },
   plugins: ["gatsby-theme-writer"],
 }

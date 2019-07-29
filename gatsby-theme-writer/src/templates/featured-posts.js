@@ -20,7 +20,7 @@ const featuredPostsQuery = graphql`
           date(formatString: "MMMM D, YYYY")
           featuredImage {
             childImageSharp {
-              fluid(maxWidth: 400, maxHeight: 250) {
+              fluid(maxWidth: 800, maxHeight: 500) {
                 ...GatsbyImageSharpFluid
               }
             }

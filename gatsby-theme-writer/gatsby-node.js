@@ -1,11 +1,12 @@
 const fs = require("fs")
+const path = require("path")
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.onPreBootstrap = ({ reporter }, options) => {
-  const contentPath = options.contentPath || "content"
-  const blogPath = `${contentPath}/blog`
-  const assetsPath = `${contentPath}/assets`
+  const contentPath = options.contentPath || "content/blog"
+  const assetsPath = options.assetsPath || "content/assets"
 
-  const paths = [contentPath, blogPath, assetsPath]
+  const paths = [contentPath, assetsPath]
 
   // each of these paths must exist, or gatsby-source-filesystem will throw an error
   paths.forEach(path => {
@@ -14,19 +15,66 @@ exports.onPreBootstrap = ({ reporter }, options) => {
       fs.mkdirSync(path)
     }
   })
-
-  if (!fs.existsSync(contentPath)) {
-    reporter.info(`Creating the ${contentPath} directory`)
-    fs.mkdirSync(contentPath)
-  }
 }
 
-exports.createPages = ({ actions, reporter }, options) => {
-  reporter.warn("make sure to load data from somewhere!")
+exports.createPages = async ({ reporter, graphql, actions }) => {
+  const { createPage } = actions
 
-  // TODO replace this with data from somewhere
-  actions.createPage({
-    path: options.basePath || "/",
-    component: require.resolve("./src/templates/page.js"),
+  const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const result = await graphql(
+    `
+      {
+        allMarkdownRemark(
+          sort: { fields: [frontmatter___date], order: DESC }
+          limit: 1000
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+              }
+            }
+          }
+        }
+      }
+    `
+  )
+
+  if (result.errors) {
+    reporter.panic(result.errors)
+  }
+
+  // Create blog posts pages.
+  const posts = result.data.allMarkdownRemark.edges
+
+  posts.forEach((post, index) => {
+    const previous = index === posts.length - 1 ? null : posts[index + 1].node
+    const next = index === 0 ? null : posts[index - 1].node
+
+    createPage({
+      path: post.node.fields.slug,
+      component: blogPost,
+      context: {
+        slug: post.node.fields.slug,
+        previous,
+        next,
+      },
+    })
   })
+}
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
+  }
 }

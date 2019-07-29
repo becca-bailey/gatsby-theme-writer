@@ -12,6 +12,7 @@ const SiteTitle = ({ baseUrl, children }) => {
         color: "text",
         paddingLeft: 4,
         paddingRight: 4,
+        textAlign: "center",
       }}
     >
       <h1 sx={{ fontFamily: "title" }}>{children}</h1>
