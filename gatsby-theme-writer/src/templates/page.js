@@ -1,10 +1,10 @@
 import React from "react"
-import { Styled } from "theme-ui"
 import Layout from "../components/layout"
+import FeaturedPosts from "./featured-posts"
 
 const PageTemplate = ({ pageContext }) => (
   <Layout>
-    <Styled.h1>{pageContext.heading}</Styled.h1>
+    <FeaturedPosts />
     <div dangerouslySetInnerHTML={{ __html: pageContext.content }} />
   </Layout>
 )

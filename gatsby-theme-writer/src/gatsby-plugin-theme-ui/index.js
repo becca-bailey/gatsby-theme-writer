@@ -8,22 +8,20 @@ export default {
     text: "#232129",
     background: "#fff",
     primary: "#4d13d1",
-    light: "#eeeeee",
+    gray: ["#efefef", "#ddd", "#333", "#111"],
   },
   fonts: {
-    body: "Lora, serif",
     heading: "Rubik, sans-serif",
     title: "Petit Formal Script, sans-serif",
-    default:
-      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    default: "Lora, serif",
   },
-  fontSizes: [16, 18, 20, 22, 27, 36],
+  fontSizes: [18, 20, 22, 27, 36, 48],
   lineHeights: {
     text: "1.45",
     heading: "1.1",
   },
   sizes: {
-    container: 650,
+    container: 900,
   },
   styles: {
     Layout: {
@@ -34,18 +32,9 @@ export default {
       lineHeight: "text",
     },
     Header: {
-      backgroundColor: "primary",
-      color: "background",
-      fontWeight: "bold",
-      margin: 0,
-      span: {
-        display: "block",
-        fontSize: 3,
-        margin: "0 auto",
-        maxWidth: "container",
-        padding: 3,
-        width: "90vw",
-      },
+      marginTop: 2,
+      display: "flex",
+      justifyContent: "center",
     },
     Main: {
       margin: "0 auto",
@@ -61,6 +50,13 @@ export default {
       color: "text",
       fontSize: 5,
       lineHeight: "heading",
+      fontFamily: "heading",
+      fontWeight: 400,
+    },
+    h2: {
+      color: "text",
+      fontFamily: "heading",
+      fontWeight: 400,
     },
   },
 }

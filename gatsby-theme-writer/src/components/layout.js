@@ -2,7 +2,7 @@ import React from "react"
 import { css, Global } from "@emotion/core"
 import { Layout as StyledLayout, Header, Main, Container } from "theme-ui"
 import { graphql, useStaticQuery } from "gatsby"
-import SiteTitle from "./SiteTitle"
+import SiteTitle from "./site-title"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
