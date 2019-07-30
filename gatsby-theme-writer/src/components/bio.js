@@ -17,15 +17,17 @@ const Bio = () => {
         alignItems: "center",
       }}
     >
-      <Image
-        sx={{
-          borderRadius: "50%",
-          marginRight: 3,
-          minWidth: [100, 120],
-          maxHeight: [100, 120],
-        }}
-        fixed={data.avatar.childImageSharp.fixed}
-      />
+      {data.avatar && (
+        <Image
+          sx={{
+            borderRadius: "50%",
+            marginRight: 3,
+            minWidth: [100, 120],
+            maxHeight: [100, 120],
+          }}
+          fixed={data.avatar.childImageSharp.fixed}
+        />
+      )}
       <p>{data.site.siteMetadata.description}</p>
     </Flex>
   )
