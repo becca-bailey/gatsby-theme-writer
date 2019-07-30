@@ -10,6 +10,7 @@ import {
 import { graphql, useStaticQuery } from "gatsby"
 import SiteTitle from "./site-title"
 import Footer from "./footer"
+import SocialIcons from "./social-icons"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -40,6 +41,7 @@ const Layout = ({ children }) => {
       <Main>
         <Container>{children}</Container>
       </Main>
+      <SocialIcons />
       <StyledFooter>
         <Footer />
       </StyledFooter>

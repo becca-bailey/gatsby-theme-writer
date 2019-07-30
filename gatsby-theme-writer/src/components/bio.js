@@ -8,33 +8,26 @@ import { graphql, useStaticQuery } from "gatsby"
 const Bio = () => {
   const data = useStaticQuery(bioQuery)
   return (
-    <>
-      <Flex sx={{ justifyContent: "flex-end" }}>
-        <SocialIcons social={data.site.siteMetadata.social} />
-      </Flex>
-      <Flex
+    <Flex
+      sx={{
+        borderTop: "1px solid #eee",
+        paddingTop: 3,
+        paddingBottom: 3,
+        marginBottom: 3,
+        alignItems: "center",
+      }}
+    >
+      <Image
         sx={{
-          borderTop: "1px solid #eee",
-          paddingTop: 3,
-          paddingBottom: 3,
-          marginBottom: 3,
-          alignItems: "center",
+          borderRadius: "50%",
+          marginRight: 3,
+          minWidth: [100, 120],
+          maxHeight: [100, 120],
         }}
-      >
-        <Image
-          sx={{
-            borderRadius: "50%",
-            marginRight: 3,
-            minWidth: [100, 120],
-            maxHeight: [100, 120],
-          }}
-          fixed={data.avatar.childImageSharp.fixed}
-        />
-        <div>
-          <p>{data.site.siteMetadata.description}</p>
-        </div>
-      </Flex>
-    </>
+        fixed={data.avatar.childImageSharp.fixed}
+      />
+      <p>{data.site.siteMetadata.description}</p>
+    </Flex>
   )
 }
 
