@@ -6,6 +6,7 @@ import Image from "gatsby-image"
 import Bio from "../components/bio"
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
+import SEO from "../components/seo"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -15,6 +16,7 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
+        <SEO title={post.title} />
         <Image
           sx={{ marginBottom: 4 }}
           fluid={post.frontmatter.featuredImage.childImageSharp.fluid}

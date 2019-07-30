@@ -40,8 +40,8 @@ const Layout = ({ children }) => {
       </Header>
       <Main>
         <Container>{children}</Container>
+        <SocialIcons />
       </Main>
-      <SocialIcons />
       <StyledFooter>
         <Footer />
       </StyledFooter>

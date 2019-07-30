@@ -5,7 +5,7 @@ import { jsx } from "theme-ui"
 
 const Footer = () => {
   return (
-    <footer
+    <span
       sx={{
         fontFamily: "heading",
         textTransform: "uppercase",
@@ -16,7 +16,7 @@ const Footer = () => {
       © {new Date().getFullYear()}, Powered by
       {` `}
       <a href="https://www.gatsbyjs.org">Gatsby</a>
-    </footer>
+    </span>
   )
 }
 

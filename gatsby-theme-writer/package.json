@@ -34,6 +34,7 @@
     "gatsby-source-filesystem": "^2.1.6",
     "gatsby-transformer-remark": "^2.6.1",
     "gatsby-transformer-sharp": "^2.2.4",
+    "react-helmet": "^5.2.1",
     "theme-ui": "^0.2.21",
     "typeface-petit-formal-script": "^0.0.72",
     "typeface-rubik": "^0.0.72"

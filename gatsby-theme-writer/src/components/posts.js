@@ -2,7 +2,6 @@ import React from "react"
 import PostPreview from "./post-preview"
 
 const Posts = ({ posts }) => {
-  console.log(posts)
   return (
     <>
       {posts.map(post => (
