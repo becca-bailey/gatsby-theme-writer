@@ -1,8 +1,15 @@
 import React from "react"
 import { css, Global } from "@emotion/core"
-import { Layout as StyledLayout, Header, Main, Container } from "theme-ui"
+import {
+  Layout as StyledLayout,
+  Header,
+  Main,
+  Container,
+  Footer as StyledFooter,
+} from "theme-ui"
 import { graphql, useStaticQuery } from "gatsby"
 import SiteTitle from "./site-title"
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -33,6 +40,9 @@ const Layout = ({ children }) => {
       <Main>
         <Container>{children}</Container>
       </Main>
+      <StyledFooter>
+        <Footer />
+      </StyledFooter>
     </StyledLayout>
   )
 }

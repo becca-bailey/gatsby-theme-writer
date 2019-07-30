@@ -31,6 +31,7 @@ const featuredPostsQuery = graphql`
         }
         excerpt
         timeToRead
+        id
       }
     }
   }

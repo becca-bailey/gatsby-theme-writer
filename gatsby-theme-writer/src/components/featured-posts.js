@@ -10,6 +10,7 @@ const FeaturedPosts = ({ posts }) => {
         border: "1px solid #eee",
         backgroundColor: "#fcfcfc",
         borderRadius: 4,
+        padding: 3,
       }}
     >
       <Grid columns={posts.length}>

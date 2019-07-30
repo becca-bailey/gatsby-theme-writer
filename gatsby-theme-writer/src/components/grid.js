@@ -1,14 +1,17 @@
+import React from "react"
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
-const Grid = ({ columns, children, padding = 3 }) => {
+const Grid = ({ columns, children, padding = 3, responsive = true }) => {
+  columns = responsive
+    ? ["repeat(1, 1fr)", `repeat(${columns}, 1fr)`]
+    : `repeat(${columns}, 1fr)`
   return (
     <div
       sx={{
         display: "grid",
-        gridColumnGap: 3,
-        gridTemplateColumns: ["repeat(1, 1fr)", `repeat(${columns}, 1fr)`],
-        padding: 3,
+        gridColumnGap: padding,
+        gridTemplateColumns: columns,
       }}
     >
       {children}

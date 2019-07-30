@@ -2,8 +2,9 @@ import { graphql, Link } from "gatsby"
 import React from "react"
 import Layout from "../components/layout"
 import PostMetadata from "../components/post-metadata"
+import Image from "gatsby-image"
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -13,12 +14,19 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <h1>{post.frontmatter.title}</h1>
+        <Image
+          sx={{ marginBottom: 4 }}
+          fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
+        />
+        <Styled.h1 sx={{ marginBottom: 1 }}>{post.frontmatter.title}</Styled.h1>
         <PostMetadata
           formattedDate={post.frontmatter.date}
           timeToRead={post.timeToRead}
         />
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div
+          sx={{ fontSize: 3 }}
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
         <ul
           sx={{
             display: `flex`,
@@ -64,6 +72,13 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 1000, maxHeight: 500) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

@@ -15,20 +15,20 @@ export default {
     title: "Petit Formal Script, sans-serif",
     default: "Lora, serif",
   },
-  fontSizes: [18, 20, 22, 27, 36, 48],
+  fontSizes: [14, 18, 20, 22, 27, 36, 48],
   lineHeights: {
-    text: "1.45",
+    text: "1.55",
     heading: "1.1",
   },
   sizes: {
-    container: 900,
+    container: 800,
   },
   styles: {
     Layout: {
       backgroundColor: "background",
       color: "text",
       fontFamily: "default",
-      fontSize: 1,
+      fontSize: 2,
       lineHeight: "text",
     },
     Header: {
@@ -45,6 +45,11 @@ export default {
       padding: 0,
       paddingBottom: 3,
       paddingTop: 3,
+    },
+    Footer: {
+      margin: "0 auto",
+      maxWidth: "container",
+      padding: 3,
     },
     h1: {
       color: "text",
