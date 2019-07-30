@@ -1,11 +1,12 @@
 {
-  "name": "gatsby-theme-writer",
-  "author": "Becca Bailey",
+  "name": "@beccanelson/gatsby-theme-writer",
+  "author": "Becca Bailey <beccanelsonbailey@gmail.com>",
+  "description": "A minimalist Gatsby theme for writers",
   "repository": {
     "type": "git",
     "url": "https://github.com/beccanelson/gatsby-theme-writer.git"
   },
-  "version": "1.0.1",
+  "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "peerDependencies": {
@@ -42,7 +43,8 @@
   "keywords": [
     "gatsby",
     "gatsby-theme",
-    "gatsby-plugin"
-  ],
-  "scripts": {}
+    "gatsby-plugin",
+    "minimalist",
+    "blog"
+  ]
 }
