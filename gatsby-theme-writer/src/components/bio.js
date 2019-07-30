@@ -2,7 +2,6 @@ import React from "react"
 import Image from "gatsby-image"
 /** @jsx jsx */
 import { jsx, Flex } from "theme-ui"
-import SocialIcons from "./social-icons"
 import { graphql, useStaticQuery } from "gatsby"
 
 const Bio = () => {
@@ -46,10 +45,6 @@ const bioQuery = graphql`
       siteMetadata {
         author
         description
-        social {
-          instagram
-          twitter
-        }
       }
     }
   }

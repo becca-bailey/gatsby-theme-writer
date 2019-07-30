@@ -8,7 +8,7 @@ export default {
     text: "#232129",
     background: "#fff",
     primary: "#4d13d1",
-    gray: ["#efefef", "#ddd", "#333", "#111"],
+    gray: ["#efefef", "#ddd", "#888", "#333", "#111"],
   },
   fonts: {
     heading: "Rubik, sans-serif",
