@@ -15,9 +15,7 @@ const FeaturedPost = ({
 }) => {
   return (
     <article>
-      <Link to={slug}>
-        <Image sx={{ maxHeight: 250 }} fluid={fluidImageData} />
-      </Link>
+      <Image sx={{ maxHeight: 250 }} fluid={fluidImageData} />
       <Styled.h2 sx={{ marginBottom: 0 }}>{title}</Styled.h2>
       <PostMetadata timeToRead={timeToRead} formattedDate={formattedDate} />
       <p>
