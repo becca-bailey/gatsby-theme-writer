@@ -10,11 +10,11 @@ module.exports = {
     author: `Becca Bailey`,
     description:
       "Proin at viverra nisi. Praesent vehicula dolor non enim tempor pharetra. Aenean sed fermentum massa. In posuere consequat sapien a volutpat. Vivamus quis egestas augue. Nulla eros leo, interdum vel maximus aliquet, suscipit quis purus. ",
-    siteUrl: `http://becca.is`,
+    siteUrl: `http://gatsby-theme-writer.netlify.com`,
     social: {
       twitter: `beccaliz`,
       instagram: `beccamakesthings`,
     },
   },
-  plugins: ["gatsby-theme-writer"],
+  plugins: ["@beccanelson/gatsby-theme-writer"],
 }

@@ -1,15 +1,21 @@
 const fs = require("fs")
 const mkdirp = require("mkdirp")
+const path = require("path")
 const { createFilePath } = require("gatsby-source-filesystem")
 
 let basePath
 
-exports.onPreBootstrap = ({ reporter }, options) => {
+exports.onPreBootstrap = ({ reporter, store }, options) => {
+  const { program } = store.getState()
+
   basePath = options.basePath || "/"
   const contentPath = options.contentPath || "content/blog"
   const assetsPath = options.assetsPath || "content/assets"
 
-  const paths = [contentPath, assetsPath]
+  const paths = [
+    path.join(program.directory, contentPath),
+    path.join(program.directory, assetsPath),
+  ]
 
   // each of these paths must exist, or gatsby-source-filesystem will throw an error
   paths.forEach(path => {

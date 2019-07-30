@@ -1,7 +1,7 @@
 ---
 title: My First Blog Post!
 date: "2019-07-28"
-featuredImage: "./featured.jpeg"
+featuredImage: "./featured.jpg"
 featured: true
 ---
 

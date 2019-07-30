@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = options => ({
   siteMetadata: {
     title: "Gatsby Theme Writer",
   },
@@ -7,15 +7,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
+        path: options.contentPath || `content/blog`,
+        name: options.contentPath || `content/blog`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
+        path: options.assetsPath || `content/assets`,
+        name: options.assetsPath || `content/assets`,
       },
     },
     {
@@ -44,4 +44,4 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-offline`,
   ],
-}
+})
