@@ -5,7 +5,7 @@ import { Facebook, Twitter, Linkedin, Instagram } from "./icons"
 import { jsx, Flex } from "theme-ui"
 import Grid from "./grid"
 import { useStaticQuery, graphql } from "gatsby"
-import baseTheme from "gatsby-theme-writer/src/gatsby-plugin-theme-ui"
+import baseTheme from "@beccanelson/gatsby-theme-writer/src/gatsby-plugin-theme-ui"
 
 const defaultTransformer = value => value
 

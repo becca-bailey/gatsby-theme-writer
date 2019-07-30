@@ -1,6 +1,6 @@
 const fs = require("fs")
-const path = require("path")
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const mkdirp = require("mkdirp")
+const { createFilePath } = require("gatsby-source-filesystem")
 
 let basePath
 
@@ -15,7 +15,7 @@ exports.onPreBootstrap = ({ reporter }, options) => {
   paths.forEach(path => {
     if (!fs.existsSync(path)) {
       reporter.info(`Creating the ${path} directory`)
-      fs.mkdirSync(path)
+      mkdirp(path)
     }
   })
 }
