@@ -1,9 +1,11 @@
 import Grid from "./grid"
 import FeaturedPost from "./featured-post"
+import { useStaticQuery } from "gatsby"
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
-const FeaturedPosts = ({ posts }) => {
+const FeaturedPosts = () => {
+  const { allMarkdownRemark } = useStaticQuery(featuredPostsQuery)
   return (
     <div
       sx={{
@@ -13,8 +15,8 @@ const FeaturedPosts = ({ posts }) => {
         padding: 3,
       }}
     >
-      <Grid columns={posts.length}>
-        {posts.map(post => (
+      <Grid columns={allMarkdownRemark.nodes.length}>
+        {allMarkdownRemark.nodes.map(post => (
           <FeaturedPost
             key={post.id}
             title={post.frontmatter.title}
@@ -33,3 +35,32 @@ const FeaturedPosts = ({ posts }) => {
 }
 
 export default FeaturedPosts
+
+const featuredPostsQuery = graphql`
+  query FeaturedPosts {
+    allMarkdownRemark(
+      filter: { frontmatter: { featured: { eq: true } } }
+      limit: 2
+    ) {
+      nodes {
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          date(formatString: "MMMM D, YYYY")
+          featuredImage {
+            childImageSharp {
+              fluid(maxWidth: 800, maxHeight: 500) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        excerpt
+        timeToRead
+        id
+      }
+    }
+  }
+`

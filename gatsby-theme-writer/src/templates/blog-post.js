@@ -3,6 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import PostMetadata from "../components/post-metadata"
 import Image from "gatsby-image"
+import Bio from "../components/bio"
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
 
@@ -33,7 +34,7 @@ class BlogPostTemplate extends React.Component {
             flexWrap: `wrap`,
             justifyContent: `space-between`,
             listStyle: `none`,
-            padding: 0,
+            paddingBottom: 4,
           }}
         >
           <li>
@@ -51,6 +52,7 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
+        <Bio />
       </Layout>
     )
   }

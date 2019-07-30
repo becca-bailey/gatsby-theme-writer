@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import Posts from "../components/posts"
-import FeaturedPosts from "./featured-posts"
+import FeaturedPosts from "../components/featured-posts"
 import Bio from "../components/bio"
 
 const BlogIndexTemplate = ({ pageContext }) => {
