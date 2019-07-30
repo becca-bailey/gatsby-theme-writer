@@ -1,6 +1,6 @@
 import Grid from "./grid"
 import FeaturedPost from "./featured-post"
-import { useStaticQuery } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 

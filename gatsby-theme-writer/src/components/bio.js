@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React from "react"
 import Image from "gatsby-image"
 /** @jsx jsx */

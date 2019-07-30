@@ -1,9 +1,10 @@
+// eslint-disable-next-line
 import React from "react"
 import { Facebook, Twitter, Linkedin, Instagram } from "./icons"
 /** @jsx jsx */
 import { jsx, Flex } from "theme-ui"
 import Grid from "./grid"
-import { useStaticQuery } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import baseTheme from "gatsby-theme-writer/src/gatsby-plugin-theme-ui"
 
 const defaultTransformer = value => value
