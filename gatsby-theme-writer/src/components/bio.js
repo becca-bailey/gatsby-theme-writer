@@ -15,6 +15,7 @@ const Bio = () => {
         paddingBottom: 3,
         marginBottom: 3,
         alignItems: "center",
+        flexDirection: ["column", "row"],
       }}
     >
       {data.avatar && (
@@ -22,8 +23,8 @@ const Bio = () => {
           sx={{
             borderRadius: "50%",
             marginRight: 3,
-            minWidth: [100, 120],
-            maxHeight: [100, 120],
+            minWidth: [150, 120],
+            minHeight: [150, 120],
           }}
           fixed={data.avatar.childImageSharp.fixed}
         />
