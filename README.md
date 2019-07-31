@@ -1,58 +1,111 @@
-# Gatsby Theme Jam Submission Example
+# Gatsby Theme Writer
 
-This repo is an example and potential starting point for theme creators.
+This is a minimal blogging theme intended to focus on content and readability.
 
-It includes:
-- a bare-bones theme (located in `theme/`) that includes basic setup
-- a demo site (located in `demo/`) that installs the theme
-- a Yarn workspaces configuration so the theme and demo can be worked on simultaneously
+See the [live demo](https://gatsby-theme-writer.netlify.com).
 
-## How to use this repo
+## Installation
 
-**NOTE:** Make sure to replace `USERNAME` with your GitHub username and `THEMENAME` with your theme name.
+To use this theme in your Gatsby sites, follow these instructions:
 
-1.  Fork this repo.
+1.  Install the theme
 
-2.  Rename the forked repo `gatsby-theme-THEMENAME`. (Make sure to replace `THEMENAME` with your chosen name.)
-
-3.  Get the theme set up locally.
     ```sh
-    # clone the repo
-    git clone git@github.com:USERNAME/gatsby-theme-THEMENAME.git
-
-    # move into the directory
-    cd gatsby-theme-THEMENAME
-
-    # install dependencies
-    yarn
+    npm install --save @beccanelson/gatsby-theme-writer
     ```
 
-4.  Update `theme/package.json` with your info.
-    ```diff
-      {
-    +   "name": "gatsby-theme-THEMENAME",
-    +   "author": "Your Name <name@example.com>",
-        "repository": {
-          "type": "git",
-    +     "url": "https://github.com/USERNAME/gatsby-theme-THEMENAME.git"
-        },
+2.  Add the theme to your `gatsby-config.js`:
+
+    ```js
+    module.exports = {
+      plugins: ["@beccanelson/gatsby-theme-writer"]
+    };
     ```
 
-5.  Start the demo site.
+3.  Start your site
     ```sh
-    yarn workspace demo develop
+    gatsby develop
     ```
 
-    The demo will start at http://localhost:8000
+## Configuration
 
-    **NOTE:** If you’re new to Yarn workspaces, check out [this post](https://www.gatsbyjs.org/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/) for details.
+You can configure your site metadata in `gatsby-config.js`. Optionally, you can also configure your `basePath`, `contentPath`, and `assetsPath`.
 
-6.  Start editing the theme! The demo site is configured to use the local theme, so any changes you make to the local `theme` directory will be reflected on the demo site for easy local development.
+Example configuration:
 
-7.  Follow the [submission checklist](./theme/README.md#submission-checklist) to make sure your theme qualifies to win!
+```js
+module.exports = {
+  siteMetadata: {
+    title: "My Gatsby Site",
+    author: "Becca Bailey",
+    description:
+      "A short description of your site. This will appear in your bio.",
+    siteUrl: "http://my-site.com",
+    social: {
+      twitter: "my-twitter",
+      instagram: "my-instagram"
+    }
+  }
+};
+```
 
-8.  [Submit your theme](https://themejam.gatsbyjs.org/submit) to win!
+If you would like to add an avatar, the bio component will look for a file named `avatar.[jpeg|jpg|gif|png]`. This should go in your assets folder.
 
-## More information
+## Adding Blog Posts
 
-For contest rules and more information, see [the Theme Jam website](https://themejam.gatsbyjs.org).
+This theme currently supports markdown posts. For more information about markdown syntax, [check out this guide](https://www.markdownguide.org/cheat-sheet/).
+
+To keep a post organized witn its assets, we can create a folder structure like this:
+
+```
+content/
+  blog/
+    my-first-post/
+      index.md
+      featured.jpg
+```
+
+In addition to the markdown content, each post needs frontmatter in order to display and categorize it.
+
+```yaml
+---
+title: My First Blog Post!
+date: "2019-07-28"
+featuredImage: "./featured.jpg"
+featured: true
+---
+
+```
+
+For more information, see the `demo/` in this repository.
+
+## Featured Posts
+
+To add a post to the featured posts module, set `featured` to `true` in the post frontmatter. Also, for best results make sure you have set a featured image for the post. This module supports up to two featured posts at a time. Note: these posts will still appear in the main posts list as well.
+
+## Customization
+
+If you would like to make changes to this theme, you can use the demo theme to help you out.
+
+```
+git clone git@github.com:beccanelson/gatsby-theme-writer.git
+cd gatsby-theme-writer
+```
+
+Install your dependencies
+
+```
+yarn
+```
+
+Start the demo
+
+```
+yarn workspace demo start
+```
+
+Additionally, you can customize your own theme using [child theming and component shadowing](https://www.gatsbyjs.org/blog/2019-01-29-themes-update-child-theming-and-component-shadowing/).
+
+## Contributing
+
+If you are using this theme, I appreciate issues and pull requests! Fork this repo, and follow the setup instructions above to contribute.
